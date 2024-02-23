@@ -1,0 +1,14 @@
+//este es un archivo de .SCSS, el cual es un formato de SASS (css pero con funciones adicionales)
+// para que se aplique a la pagina debe compilarse (convertirse a css) porque navegador no lo acepta de forma nativa
+// esa compilacion que se hace gracias al compilador de SASS (base de conocimiento), se pasa a css mediante NPM (package.json), o mediante GULP (NPM/node/npx/GULP) de forma automatizada
+
+//CONECTAR ARCHIVOS SCSS
+//este metodo antiguo globaliza todas las variables
+//@import 'base/variables.scss';
+//@import 'contenido/contenido.scss';
+
+//nuevo metodo para conectar (busca archivo _index.scss en cada directorio)
+//FORWARD solo va en index de cada directorio para apuntar
+//USE se debe usar en todas las hojas que requieran de otra, y en la principal apuntando a los index
+@use 'base';
+
