@@ -1,0 +1,61 @@
+//MIXINS
+//mixins son formas de reutilizar codigo en multiples lugares de css
+
+@mixin heading{
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: black;
+    letter-spacing: 1px;
+}
+
+//a los mixins se les puede pasar parametros y argumentos para facilitar y hacerlo mas flexible
+//se puede poner un parametro con argumento por default en caso de que en abajo no encuentre otro
+@mixin headingconParametro($color:blue){
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+}
+
+//se le puede aplicar estructuras de control como IF
+@mixin headingcon_if($color:blue, $border-radius: false){
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+
+    @if $border-radius {
+        border-radius: 1rem;
+    }
+}
+
+//para usar los media query en SASS hay que crearlos como mixin y dentro poner @content para ser soportados
+@mixin telefono{
+    @media (min-width: 480px){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media (min-width: 992px){
+        @content;
+    }
+}
+
+@mixin grid($numberCol:2, $separacion:3rem){
+    display: grid;
+    grid-template-columns: repeat($numberCol, 1fr);
+    gap: $separacion;
+}
+
+@mixin resetear-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

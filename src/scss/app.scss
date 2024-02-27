@@ -1,6 +1,7 @@
 //este es un archivo de .SCSS, el cual es un formato de SASS (css pero con funciones adicionales)
 // para que se aplique a la pagina debe compilarse (convertirse a css) porque navegador no lo acepta de forma nativa
 // esa compilacion que se hace gracias al compilador de SASS (base de conocimiento), se pasa a css mediante NPM (package.json), o mediante GULP (NPM/node/npx/GULP) de forma automatizada
+//las @ son llamadas directivas en SASS
 
 //CONECTAR ARCHIVOS SCSS
 //este metodo antiguo globaliza todas las variables
@@ -11,4 +12,8 @@
 //FORWARD solo va en index de cada directorio para apuntar
 //USE se debe usar en todas las hojas que requieran de otra, y en la principal apuntando a los index
 @use 'base';
+@use 'layout';
 
+
+//SCSS es como un lenguaje de programacion para CSS porque incluso usa estructuras de contro
+// control+shift+p = abrir configuracion snippets > scss.json o en el archivo que se desee y configurar el shorthand
